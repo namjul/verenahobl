@@ -11,7 +11,6 @@
 - **Title:** Verena Hobl – Design
 - **Type:** Personal portfolio — graphic design & illustration
 - **Language:** German (Austrian)
-- **Platform:** Squarespace
 - **Copyright:** © 2026 - Verena Hobl
 
 ---
@@ -31,34 +30,36 @@ The site is intentionally minimal — color comes entirely from project photogra
 
 ### 2.2 Typography
 
-- Clean, minimal sans-serif throughout
-- Logo/wordmark: "Verena Hobl – Design" rendered as a linked image (not text), 1500w format
-- Navigation: uppercase or small-caps feel, standard weight
+- Logo/wordmark: **hand-lettered calligraphy** — lowercase "verena hobl" in a single-weight ink line, loose and organic. Not a typeface. Cannot be replicated with a font; must use the image file (`verenahobl_logo.webp`). This is the primary brand differentiator.
+- Site body/nav font: clean, minimal sans-serif — `⚠ UNKNOWN` (identify via WhatFont or ask Verena)
+- Navigation: standard weight, no uppercase
 - Body text: regular weight, black on white
-- Category tags on project pages: uppercase, spaced letters (e.g. `WANDMALEREI`, `ILLUSTRATION`)
+- Category tags on project pages: uppercase, letter-spaced (e.g. `WANDMALEREI`, `ILLUSTRATION`) — only typographic decoration on the site
 - Year label: plain, same size as body
 
 ### 2.3 Layout
 
 - **Overall:** Centered, clean, generous whitespace
-- **Grid (projects page):** Masonry or uniform image grid — project cards are image thumbnails with title below, no description text visible in grid
+- **Grid (projects page):** Image grid — cards are thumbnails with title below, no description visible. Grid type (masonry vs uniform columns) `⚠ UNKNOWN` — confirm by eye or ask Verena
+- **Grid column count:** `⚠ UNKNOWN` — likely 2–3 columns desktop, 1–2 mobile
+- **Image aspect ratio in grid:** `⚠ UNKNOWN` — likely consistent square or 4:3; confirm from source images
 - **Project detail pages:** Single-column, image-focused layout
-- **Max-width:** Standard content width, not full-bleed (except images on project pages)
+- **Max-width:** `⚠ UNKNOWN` exact value — visually standard content width (~1200px), not full-bleed
 - **Responsive:** Yes — mobile menu toggle ("Menü öffnen / schließen")
 
 ### 2.4 Header
 
-- Fixed-position header
-- Left: Logo image linking to homepage (`verenahobl_logo.webp`)
+- Header position: `⚠ UNKNOWN` — appears fixed or sticky; confirm scroll behavior
+- Left: Logo image linking to homepage (`verenahobl_logo.webp`, confirmed in repo)
 - Center: Primary navigation (`Projekte` | `Profil`)
-- Right: Shopping cart icon (shows item count, currently 0 — cart is present but shop is inactive)
+- Right: Shopping cart icon (0 items; shop inactive — rebuild decision: keep or drop `⚠ DECIDE`)
 - Accessibility: "Zum Inhalt springen" (skip-to-content) link
 
 ### 2.5 Footer
 
 Present on all pages. Contains:
 - Copyright notice: `© 2026 - Verena Hobl`
-- Decorative animated bottle illustration (`flasche.png` / GIF)
+- Bottle character illustration (`flasche.webp`, confirmed in repo — static webp; animated version may exist separately `⚠ CONFIRM`)
 - Link: `Impressum | Datenschutz` (single link to legal/privacy page)
 
 ### 2.6 Interactions
@@ -101,12 +102,12 @@ This is not just a personal quote; it describes the site itself. The fewest poss
 
 **Reduction as identity:** The minimal white/black UI is not a neutral backdrop — it is the brand statement. The contrast between the controlled, sparse interface and the expressive, colourful artwork is intentional and deliberate.
 
-**The bottle motif:** The animated bottle illustration (`flasche.png`) appears in two places: the site footer (every page) and as a Playground project asset. It is the only decorative/playful element in the UI itself — a small signature that breaks the strict minimalism in a personal, handmade way. Treat it as a mascot/logo secondary element, not random decoration.
+**The bottle motif:** `flasche.webp` — a hand-drawn bottle character with dot eyes and a smile (a face). Same single-weight ink-line style as the logo. Appears in the site footer (every page) and as a Playground project asset. It shares the exact visual language of the logo — both are drawn, not designed. Treat as a secondary brand mascot, not random decoration. The hand-drawn quality of both logo and bottle is the clearest expression of the brand: the designer's hand is literally present in the identity.
 
 **Image as primary content:** The grid IS the homepage. There are no headlines, hero banners, or introductory text on the homepage — the visitor lands directly in the work.
 
 **Typography hierarchy (inferred, exact font unknown):**
-- Single typeface throughout (no Typekit/Adobe Fonts confirmed; likely a system or Google Font)
+- Single typeface throughout (`⚠ UNKNOWN` — identify before build)
 - Three visible weights/treatments:
   1. Navigation links — light/regular
   2. Project titles in grid and on detail pages — likely medium or regular
@@ -116,9 +117,8 @@ This is not just a personal quote; it describes the site itself. The fewest poss
 **Color philosophy:**
 - UI palette: `#ffffff` background, near-black text — never softened to grey
 - The only "brand colors" are those that appear in the work itself (murals, illustrations)
-- No hover color shifts on nav — the aesthetic is static, not interactive-flashy
-
-**Squarespace template:** `portfolio-grid-basic` — this is the exact template. A rebuild should match this grid structure: image-first cards, title below, no metadata in the grid.
+- Hover states: `⚠ UNKNOWN` — likely subtle (opacity or underline); no color shifts expected given aesthetic
+- Transition speed on lightbox/nav: `⚠ UNKNOWN`
 
 ### 3.4 Identity Summary for Rebuilding
 
@@ -141,7 +141,7 @@ This is not just a personal quote; it describes the site itself. The fewest poss
 /projekte                  → same as /
 /projekte/[slug]           → individual project detail page (19 projects)
 /profil                    → profile / about page
-/impressum                 → legal notice + privacy policy (linked in footer)
+/impressum                 → legal notice + privacy policy (linked in footer) — ⚠ CONTENT UNKNOWN (404 on crawl; get text from Verena)
 ```
 
 ### 4.1 Primary Navigation
@@ -195,7 +195,7 @@ This is not just a personal quote; it describes the site itself. The fewest poss
 **Layout:** Single column, text + images
 
 ### Hero Image
-Mural portrait (filename hint: `Wandmalerei-Portraits-Surfhouse-WalterWhite`)
+Mural portrait — Walter White / Surfhouse mural. `⚠ IMAGE TO SOURCE FROM VERENA`
 
 ### Bio
 > "Wenn es darum geht, mit wenigen Linien das Wesentliche einzufangen, bin ich in meinem Element."
@@ -441,11 +441,7 @@ All 19 projects share this template:
 - **Year:** 2020
 - **Category:** ILLUSTRATION UND GIFS
 - **Description:** "Eine Sammlung von Illustrationen, Skizzen und Gifs" — a collection of illustrations, sketches, and animated GIFs.
-- **Assets:** 5 total:
-  - 1 illustration (Illustration-02.jpg)
-  - 1 sketch (lefthand_sketch.jpg)
-  - 2 animated GIFs (bottle animation, character animation)
-  - 1 decorative graphic (flasche2.png — the same bottle that appears in the footer)
+- **Assets:** 5 total — 1 illustration, 1 sketch, 2 animated GIFs (bottle animation + character animation), 1 bottle graphic (same character as footer `flasche.webp`). `⚠ ALL TO SOURCE FROM VERENA`
 - **Credits:** None
 - **Prev:** Alpines Hochzeitsdesign
 - **Next:** Pärchen Illustration
@@ -524,11 +520,20 @@ All 19 projects share this template:
 
 ## 10. Asset Notes
 
-- **Footer bottle:** Animated GIF, filename `flasche2.png` (appears in footer on all pages and also in the Playground project gallery)
-- **Logo:** Linked image at 1500w — not text-based
-- **Project images:** Hosted on Squarespace CDN; all have lightbox/fullscreen capability
-- **Animated content:** The Underdogbar project has an animated logo GIF; Playground project has 2 animated GIFs
-- **Short film:** Goldschmiedatelier project references an externally hosted process film by Leiwand Deluxe
+### Confirmed in repo
+- `verenahobl_logo.webp` — hand-lettered logo, ready to use
+- `flasche.webp` — bottle mascot character, ready to use (static; animated version may also exist — `⚠ CONFIRM WITH VERENA`)
+
+### To source from Verena
+- All 19 project image sets (count per project documented in §8)
+- Profil page hero image (Walter White / Surfhouse mural)
+- Animated logo GIF for The Underdogbar project
+- 2 animated GIFs for the Playground project
+- Impressum + Datenschutz page text
+
+### Notes
+- Lightbox/fullscreen on project images: implement in rebuild (behavior existed on old site)
+- Goldschmiedatelier process film: externally hosted at leiwanddeluxe.com — link only, no file needed
 
 ---
 
@@ -542,6 +547,140 @@ All 19 projects share this template:
 | Alpines Hochzeitsdesign photography | http://www.julia-eileen.com |
 | Graffiti Porträt documentation | https://www.spraycity.at |
 | The Underdogbar / Graffiti Dschungel | Instagram @theunderdogbar |
+
+---
+
+## 13. Adjacent Possible — Feature Ideas
+
+Ideas grounded in what already exists on the site. Not a roadmap — a map of directions the site could grow into. Implement in order of impact vs. effort; don't do all at once.
+
+### 13.1 Primary (v1 candidates — close to current state, high value)
+
+1. **Shop activation** — cart already wired in; store marked inactive. Natural products: fine art prints, custom portrait commissions. No new infrastructure needed beyond activating it.
+2. **Commission configurator** — lightweight form: style selector → format → contact. Familien Porträts, Kalligrafie, and Graffiti Porträt are all proven repeatable services with zero CTA currently.
+3. **Category filter** — single row of text tags above grid: `Alle · Wandmalerei · Illustration · Hochzeit · Kalligrafie`. Pure CSS or minimal JS. Grid stays, metadata is already there.
+4. **Process layer per project** — collapsible "Entstehung" section per project; sketch-to-wall arc. Only Goldschmiedatelier has this currently. Adds depth without cluttering the default view.
+5. **Before/after slider** — blank wall → finished mural. 10 of 19 projects are murals; this is the core drama of the work. Interactive swipe comparison.
+6. **Dark mode** — UI palette is already black/white; trivial to invert. Colorful artwork pops harder on dark. System-preference auto-switch or manual toggle.
+7. **Bottle as more** — `flasche.webp` is a ready-made mascot sitting in the footer basement. Use on 404 page, as animated page loader, or as a cursor easter egg on the homepage.
+8. **English layer** — toggle that switches bio and project descriptions to English; keeps German UI. International client track already exists (France twice). Not a full localization — a practical minimum.
+9. **Headless CMS rebuild** — move content to Sanity or similar; static frontend (Astro, Next.js). Verena edits content without touching code. Spec document already contains the full CMS schema.
+10. **Availability signal** — "Verfügbar ab [month]" on Profil page or sticky banner. Mural commissions need months of lead time; sets expectations and creates urgency without a booking system.
+
+---
+
+### 13.2 Secondary (v2/v3 — later iterations, higher complexity or lower urgency)
+
+> These are directionally interesting but should not block a v1 rebuild. Revisit once the core site is stable and live.
+
+11. **Timeline view** — projects span 2008–2025 (17 years). Chronological mode alongside the grid shows the arc of the practice.
+12. **Map view** — most murals have specific locations (Vienna districts, Kärnten, France). A map makes the geographic range and density visible; useful for prospective mural clients.
+13. **Related projects** — 2–3 thumbnails by same category at the bottom of each detail page. Keeps visitors inside the work longer.
+14. **Random project button** — "überrasch mich" entry point. Small, low-effort, high personality.
+15. **Mural-specific inquiry form** — scoped: wall dimensions, indoor/outdoor, location, timeline, style reference. Different from a general commission form; reduces back-and-forth for the highest-value commissions.
+16. **Gift voucher** — "commission a portrait as a gift" is the origin story of the Graffiti Porträt project. Already a validated use case.
+17. **Waitlist** — if booked out, collect email. One field, one button. Turns away-traffic into future leads.
+18. **Client logo wall** — Gurkerl, Strandbar Herrmann, Rebel Meat are recognizable Vienna brands. Visual social proof without needing testimonial copy.
+19. **Hand-drawn UI elements** — borders, dividers, button outlines in the same single-weight ink style as the logo and bottle mascot. The chrome itself becomes part of the handmade identity rather than generic boxes.
+20. **Seasonal bottle variants** — the mascot changes slightly for seasons or occasions. Low effort, high personality signal.
+21. **Custom cursor** — drawing pen or brush on hover over images. Communicates "artist's site" without stating it.
+22. **Instagram feed on Profil** — @verenahobl already linked; pulling recent posts keeps the site feeling alive between project updates without a full CMS workflow.
+23. **"Work in progress" state** — murals take days or weeks. A current-project page or banner ("gerade in Arbeit: ...") makes the site feel inhabited and active.
+24. **Print-on-demand** — line portrait series (Gesichter in Linien, Familien Porträts) are natural candidates for art prints. Integrates with the dormant cart.
+25. **Service landing pages** — "Wandmalerei Wien", "Portraitillustration Wien", "Hochzeitseinladung Wien". Currently the site has no keyword surface for people who don't already know Verena's name. SEO entry points for each service type.
+
+---
+
+### 13.3 Generative Constraints — limitations that produce something better than their absence
+
+> These are not problems to solve. They are constraints worth keeping deliberately — or even hardening into rules. Each one, when embraced, produces a sharper identity than the unconstrained alternative.
+
+1. **Sequential prev/next as curatorial voice** — the artist controls the order visitors experience the work. Removing jump navigation isn't a missing feature; it's editorial authority. The sequence is a statement. Make the order deliberate and meaningful, not just reverse-chronological.
+2. **No homepage text** — the grid lands with zero copy. Could be made a hard rule: no text anywhere on the homepage, ever. Forces every image to be immediately legible on its own terms. Makes every image selection high-stakes — and therefore high-quality.
+3. **Email-only contact as quality filter** — friction screens clients. Someone who writes an email is already more committed than someone who fills a form. The constraint removes low-effort, low-quality inquiries before they happen. Worth keeping deliberately, not fixing.
+4. **No pricing as positioning** — works the same way as architecture and bespoke craft. The absence of a price signals "not a commodity." Forces a conversation before a transaction. Places the work in a different category than commission marketplaces.
+5. **Black/white UI as a hard rule** — currently implicit, could be made explicit and unbreakable. No color in the UI under any circumstance — buttons, hover states, form fields, tags. All color judgment falls entirely on the artwork. The constraint means the work can never be upstaged by the chrome.
+6. **Hand-drawn only for UI decoration** — logo and bottle are both hand-drawn. Could become a rule: any decorative element in the UI must be drawn by Verena's hand. No stock icons, no SVG libraries. Makes the identity inimitable — impossible to replicate with a template.
+7. **Fixed or maximum project count** — 19 is odd and non-round. Could be made meaningful: a hard ceiling (say 20). New work in, old work out. Forces a quality gate. Signals the collection is curated, not accumulated. Gallery logic: finite wall space.
+8. **30-word maximum per project description** — currently 1–3 sentences by convention. Could be a hard rule. Forces precision — every word chosen because no other would do. Matches the brand philosophy ("wenigen Linien") at the level of language.
+9. **No testimonials as a trust signal** — the absence of quotes says: the work doesn't need endorsement. For the right kind of client, this reads as confidence, not oversight. The constraint is itself the statement.
+10. **German-only as local identity depth** — being explicitly not-English makes the site legibly Viennese. In a globalized internet, being local is a positioning choice. The constraint makes her "the Vienna mural artist" rather than "a mural artist." International clients who find her through word of mouth arrive already sold — the site doesn't need to convert cold traffic.
+
+---
+
+## 14. Closed Doors
+
+### 14.1 Content — what's there that works against it
+
+**Old work mixed with new.** The grid presents 2008–2025 without hierarchy. Cartoon (2008), Miniatur-Schädel (2013), and Schwarz-weiß Porträt (2015) sit alongside the 2024–2025 murals. A first-time visitor has no signal that the older work is not representative of current output. Consider whether these projects stay, move to an archive, or get dropped.
+
+**No curation signal.** Grid order is roughly reverse-chronological but not strictly so. Nothing communicates "this is the best work" vs. "this is older work." Every project carries equal visual weight.
+
+### 14.2 Assets — what's missing and must be gathered
+
+**All project images must be manually downloaded.** Every image lives on the live site; there is no export. Will be done manually before the rebuild. Count per project is documented in §8 — use it as a checklist. Also needed: the Profil hero image, the animated logo GIF (Underdogbar), and 2 animated GIFs (Playground).
+
+**Animated bottle unconfirmed.** `flasche.webp` in the repo is static. The footer on the live site may have shown an animated version — unclear. If only the static file exists, the footer character is still but loses some personality. Confirm with Verena.
+
+**Logo has no "– Design" suffix.** The image `verenahobl_logo.webp` reads "verena hobl" only. The full site title is "Verena Hobl – Design." The suffix is either rendered as adjacent text in the header or missing from the image. Needs to be resolved before the header is built.
+
+### 14.3 Legal — what's required and currently absent
+
+**Impressum + Datenschutz content unknown.** Austrian law requires an Impressum. The footer links to it but the page returned 404 on crawl — content never captured. Cannot go live without it. Get text from Verena before launch.
+
+### 14.4 Brand — where the identity works against growth
+
+**The reduction philosophy is also a ceiling.** "Mit wenigen Linien das Wesentliche einzufangen" describes the brand — and limits it. Every feature addition is a potential violation of the brand promise. Features from §13 that add words, chrome, or interaction need to earn their place carefully or they erode what makes the site work.
+
+**Good SEO requires words. The brand minimizes words.** These are in direct tension. Service landing pages, descriptions, alt text — all necessary for discoverability, all pulling against the sparse aesthetic.
+
+**Generic UI components will clash.** Forms, filters, buttons designed with standard component libraries will look out of place next to hand-lettered calligraphy and a smiley bottle mascot. Every UI addition needs to be considered against the handmade visual register.
+
+### 14.5 Business — structural gaps in the commission pipeline
+
+**Single person, no studio framing.** The brand is entirely Verena — her name, her hand, her face. No "studio" layer. If she collaborates, scales, or steps back, the identity has no room to accommodate it.
+
+**Email only.** Contact is a single email address. For mural commissions — which require site visits, measurements, quotes, scheduling — this is a bottleneck that filters out clients who want friction-free engagement.
+
+**No pricing anywhere.** Deliberate artistic positioning, but it filters clients who need budget signals before reaching out. High-value commissions may never start the conversation.
+
+### 14.6 Discovery — where the site is invisible
+
+**No English, no international search surface.** International clients (Carwyn's Surfhouse, France) found her through personal networks or Instagram, not search. Without an English layer the site is invisible to anyone searching outside the German-speaking market.
+
+**No SEO surface for service terms.** Someone searching "Wandmalerei Wien" or "Portraitillustration Wien" will not find this site. The portfolio-only structure has no keyword entry points for people who don't already know her name.
+
+**Discovery depends on Instagram.** @verenahobl is the primary inbound channel. If the platform shifts, changes its algorithm, or she stops posting, the pipeline breaks with no fallback.
+
+---
+
+## 15. Negative Space
+
+> In drawing, negative space is what you draw instead of the subject — the surrounding void that reveals the shape of what's there. These are the deliberate absences on this site that do positive work. Each one is load-bearing: remove it and something in the identity collapses.
+
+**Verena's face never appears.**
+The artist is invisible. Only her hand shows up — in the logo, the bottle, the work itself. The absence of a portrait makes the work the face. You encounter the art before you encounter the person.
+
+**No credentials, no press, no awards.**
+No CV, no "as seen in," no accolades. The absence of external validation places all trust in direct perception. The work either convinces or it doesn't — no third-party endorsement mediates that.
+
+**No client names in the grid.**
+Gurkerl, Strandbar Herrmann, Carwyn's Surfhouse — all hidden until you click in. The grid strips commercial context entirely. The work stands without its client. A mural and a wedding invitation look equivalent on the surface.
+
+**No description in the grid.**
+Image + title only. No category, no year, no teaser. The absence forces image literacy — the thumbnail has to earn the click on its own terms.
+
+**No hero, no splash, no landing moment.**
+The grid is the first thing. No introductory screen, no transition ritual. You're inside the work before you've decided to be.
+
+**No social links in the navigation.**
+Instagram is buried on the Profil page. The header has no social icons. The absence seals the site from the stream — a gallery doesn't have a live feed on the wall.
+
+**No dates in the grid.**
+Years exist on project detail pages but are invisible in the overview. The absence of chronology makes time irrelevant to quality judgment. A 2008 cartoon and a 2025 mural compete on equal terms.
+
+**No color in the UI.**
+The UI's absence of color means every color in every image feels authored and intentional — never competing with a brand accent. The whiteness is a frame that makes the work's colors more saturated by contrast.
 
 ---
 
