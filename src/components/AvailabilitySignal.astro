@@ -1,0 +1,25 @@
+---
+interface Props {
+  available: boolean;
+  availableFrom?: string;
+}
+
+const { available, availableFrom } = Astro.props;
+
+const message = available
+  ? 'Aktuell verfügbar'
+  : availableFrom
+    ? `Verfügbar ab ${availableFrom}`
+    : 'Aktuell ausgebucht';
+---
+
+<div class="inline-flex items-center gap-2 mt-6 mb-8">
+  <span
+    class:list={[
+      'inline-block w-2 h-2 rounded-full',
+      available ? 'bg-base-content' : 'bg-base-300',
+    ]}
+    aria-hidden="true"
+  />
+  <span class="tag opacity-60">{message}</span>
+</div>

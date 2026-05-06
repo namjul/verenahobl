@@ -1,0 +1,132 @@
+---
+interface Props {
+  images: string[];
+  title: string;
+}
+
+const { images, title } = Astro.props;
+---
+
+<div class="gallery mb-12 space-y-4" role="list" aria-label={`Bilder: ${title}`}>
+  {images.map((src, i) => (
+    <div role="listitem">
+      <button
+        class="gallery-trigger w-full cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-base-content"
+        data-src={src}
+        data-index={i}
+        aria-label={`Bild ${i + 1} von ${images.length} vergrößern`}
+      >
+        <img
+          src={src}
+          alt={`${title} — Bild ${i + 1}`}
+          loading={i === 0 ? 'eager' : 'lazy'}
+          decoding="async"
+          class="w-full object-cover transition-opacity duration-200 hover:opacity-90"
+          width="1200"
+          height="800"
+        />
+      </button>
+    </div>
+  ))}
+</div>
+
+<!-- Lightbox -->
+<div
+  id="lightbox"
+  class="hidden fixed inset-0 z-50 bg-base-100/95 flex items-center justify-center"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Bildansicht"
+>
+  <button
+    id="lightbox-close"
+    class="absolute top-4 right-6 text-2xl cursor-pointer opacity-60 hover:opacity-100 transition-opacity duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-base-content"
+    aria-label="Schließen"
+  >
+    ×
+  </button>
+
+  <button
+    id="lightbox-prev"
+    class="absolute left-4 top-1/2 -translate-y-1/2 text-2xl cursor-pointer opacity-40 hover:opacity-100 transition-opacity duration-200 px-3 py-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-base-content"
+    aria-label="Vorheriges Bild"
+  >
+    ←
+  </button>
+
+  <img
+    id="lightbox-img"
+    src=""
+    alt=""
+    class="max-h-[90dvh] max-w-[90vw] object-contain"
+  />
+
+  <button
+    id="lightbox-next"
+    class="absolute right-4 top-1/2 -translate-y-1/2 text-2xl cursor-pointer opacity-40 hover:opacity-100 transition-opacity duration-200 px-3 py-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-base-content"
+    aria-label="Nächstes Bild"
+  >
+    →
+  </button>
+</div>
+
+<script>
+  const triggers = document.querySelectorAll<HTMLButtonElement>('.gallery-trigger');
+  const lightbox = document.getElementById('lightbox')!;
+  const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
+  const closeBtn = document.getElementById('lightbox-close')!;
+  const prevBtn = document.getElementById('lightbox-prev')!;
+  const nextBtn = document.getElementById('lightbox-next')!;
+
+  const srcs = Array.from(triggers).map((t) => t.dataset.src ?? '');
+  let current = 0;
+
+  function open(index: number) {
+    current = index;
+    lightboxImg.src = srcs[current];
+    lightboxImg.alt = `Bild ${current + 1} von ${srcs.length}`;
+    lightbox.classList.remove('hidden');
+    lightbox.classList.add('flex');
+    closeBtn.focus();
+    document.body.style.overflow = 'hidden';
+    updateArrows();
+  }
+
+  function close() {
+    lightbox.classList.add('hidden');
+    lightbox.classList.remove('flex');
+    document.body.style.overflow = '';
+    triggers[current]?.focus();
+  }
+
+  function navigate(dir: 1 | -1) {
+    current = (current + dir + srcs.length) % srcs.length;
+    lightboxImg.src = srcs[current];
+    lightboxImg.alt = `Bild ${current + 1} von ${srcs.length}`;
+    updateArrows();
+  }
+
+  function updateArrows() {
+    prevBtn.style.display = srcs.length > 1 ? '' : 'none';
+    nextBtn.style.display = srcs.length > 1 ? '' : 'none';
+  }
+
+  triggers.forEach((btn, i) => {
+    btn.addEventListener('click', () => open(i));
+  });
+
+  closeBtn.addEventListener('click', close);
+  prevBtn.addEventListener('click', () => navigate(-1));
+  nextBtn.addEventListener('click', () => navigate(1));
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) close();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (lightbox.classList.contains('hidden')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') navigate(-1);
+    if (e.key === 'ArrowRight') navigate(1);
+  });
+</script>

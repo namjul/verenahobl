@@ -1,0 +1,106 @@
+---
+const nav = [
+  { label: 'Projekte', href: '/' },
+  { label: 'Profil', href: '/profil' },
+];
+
+const current = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-50 bg-base-100 border-b border-base-300">
+  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+
+    <!-- Logo -->
+    <a href="/" aria-label="Verena Hobl – Design, Startseite">
+      <img
+        src="/assets/verenahobl_logo.webp"
+        alt="Verena Hobl – Design"
+        class="h-7 w-auto"
+        width="200"
+        height="40"
+      />
+    </a>
+
+    <!-- Desktop nav -->
+    <nav aria-label="Hauptnavigation" class="hidden sm:flex items-center gap-8">
+      {nav.map(({ label, href }) => {
+        const isActive = href === '/'
+          ? current === '/' || current.startsWith('/projekte')
+          : current.startsWith(href);
+        return (
+          <a
+            href={href}
+            class:list={[
+              'text-sm tracking-wide transition-opacity duration-200 hover:opacity-60',
+              isActive ? 'underline underline-offset-4' : '',
+            ]}
+          >
+            {label}
+          </a>
+        );
+      })}
+    </nav>
+
+    <!-- Mobile menu toggle -->
+    <button
+      id="menu-toggle"
+      class="sm:hidden p-2 cursor-pointer"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      aria-label="Menü öffnen"
+    >
+      <svg id="icon-open" width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+        <line x1="2" y1="5" x2="20" y2="5" stroke="currentColor" stroke-width="1.5"/>
+        <line x1="2" y1="11" x2="20" y2="11" stroke="currentColor" stroke-width="1.5"/>
+        <line x1="2" y1="17" x2="20" y2="17" stroke="currentColor" stroke-width="1.5"/>
+      </svg>
+      <svg id="icon-close" width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true" class="hidden">
+        <line x1="4" y1="4" x2="18" y2="18" stroke="currentColor" stroke-width="1.5"/>
+        <line x1="18" y1="4" x2="4" y2="18" stroke="currentColor" stroke-width="1.5"/>
+      </svg>
+    </button>
+
+  </div>
+
+  <!-- Mobile menu -->
+  <div
+    id="mobile-menu"
+    class="hidden sm:hidden border-t border-base-300 bg-base-100"
+    role="navigation"
+    aria-label="Mobile Navigation"
+  >
+    <nav class="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-4">
+      {nav.map(({ label, href }) => {
+        const isActive = href === '/'
+          ? current === '/' || current.startsWith('/projekte')
+          : current.startsWith(href);
+        return (
+          <a
+            href={href}
+            class:list={[
+              'text-base transition-opacity duration-200 hover:opacity-60',
+              isActive ? 'underline underline-offset-4' : '',
+            ]}
+          >
+            {label}
+          </a>
+        );
+      })}
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('icon-open');
+  const iconClose = document.getElementById('icon-close');
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = menu?.classList.toggle('hidden') === false;
+    toggle.setAttribute('aria-expanded', String(isOpen));
+    toggle.setAttribute('aria-label', isOpen ? 'Menü schließen' : 'Menü öffnen');
+    iconOpen?.classList.toggle('hidden', isOpen);
+    iconClose?.classList.toggle('hidden', !isOpen);
+  });
+</script>

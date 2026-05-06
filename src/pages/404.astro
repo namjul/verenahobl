@@ -1,0 +1,30 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Seite nicht gefunden – Verena Hobl Design">
+  <div class="min-h-[60dvh] flex flex-col items-center justify-center px-6 text-center gap-8">
+
+    <img
+      src="/assets/flasche.webp"
+      alt=""
+      role="presentation"
+      class="h-24 w-auto opacity-60"
+      width="96"
+      height="96"
+    />
+
+    <div class="space-y-3">
+      <p class="tag opacity-40">404</p>
+      <p class="opacity-60">Diese Seite gibt es nicht.</p>
+    </div>
+
+    <a
+      href="/"
+      class="underline underline-offset-4 hover:opacity-60 transition-opacity duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-base-content"
+    >
+      Zurück zu den Projekten
+    </a>
+
+  </div>
+</Base>

@@ -1,0 +1,36 @@
+---
+export const prerender = true;
+import { getCollection, getEntry } from 'astro:content';
+import ProjectDetail from '../../layouts/ProjectDetail.astro';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projekte');
+  return projects.map(p => ({
+    params: { slug: p.id.replace(/\.md$/, '') },
+    props: { project: p },
+  }));
+}
+
+const { project } = Astro.props;
+const prevEntry = project.data.prev
+  ? await getEntry('projekte', project.data.prev)
+  : null;
+const nextEntry = project.data.next
+  ? await getEntry('projekte', project.data.next)
+  : null;
+---
+
+<ProjectDetail
+  title={project.data.title}
+  year={project.data.year}
+  category={project.data.category}
+  location={project.data.location}
+  description={project.data.description}
+  images={project.data.images}
+  credits={project.data.credits}
+  process={project.data.process}
+  prev={project.data.prev}
+  next={project.data.next}
+  prevTitle={prevEntry?.data.title}
+  nextTitle={nextEntry?.data.title}
+/>

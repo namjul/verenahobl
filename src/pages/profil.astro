@@ -1,0 +1,85 @@
+---
+export const prerender = true;
+
+import Base from '../layouts/Base.astro';
+import AvailabilitySignal from '../components/AvailabilitySignal.astro';
+---
+
+<Base
+  title="Profil – Verena Hobl Design"
+  description="Grafik Designerin & Illustratorin aus Wien. Wandmalerei, Portraits, Hochzeitsdesign, Kalligrafie."
+>
+  <div class="max-w-3xl mx-auto px-6 py-16">
+
+    <!-- Hero image -->
+    <div class="w-full aspect-[4/3] bg-base-200 mb-14 overflow-hidden">
+      <img
+        src="/assets/profil-hero.jpg"
+        alt="Wandmalerei-Portrait von Verena Hobl"
+        class="w-full h-full object-cover"
+        width="1200"
+        height="900"
+        loading="eager"
+      />
+    </div>
+
+    <!-- Bio -->
+    <blockquote class="text-xl sm:text-2xl mb-6 leading-relaxed max-w-xl">
+      „Wenn es darum geht, mit wenigen Linien das Wesentliche einzufangen, bin ich in meinem Element."
+    </blockquote>
+
+    <p class="mb-10 max-w-prose opacity-80">
+      Grafik Designerin und Illustratorin aus Wien. Arbeitet realistisch und abstrakt, auf Papier und auf Wänden. Regelmäßige internationale Projekte, u.a. Wandmalerei in Frankreich.
+    </p>
+
+    <!-- Availability -->
+    <AvailabilitySignal available={true} />
+
+    <!-- Services -->
+    <section class="mb-12" aria-labelledby="services-heading">
+      <h2 id="services-heading" class="tag mb-4 opacity-40">What I do best</h2>
+      <ul class="space-y-2">
+        <li>Portraits — minimal, realistisch, bunt, abstrakt</li>
+        <li>Wandmalerei</li>
+        <li>Illustrationen</li>
+        <li>Hochzeitseinladungen</li>
+        <li>Kalligrafie</li>
+      </ul>
+    </section>
+
+    <!-- Clients -->
+    <section class="mb-14" aria-labelledby="clients-heading">
+      <h2 id="clients-heading" class="tag mb-4 opacity-40">Kunden</h2>
+      <ul class="space-y-1 opacity-70">
+        <li>Gurkerl.at</li>
+        <li>Herrmann Strandbar</li>
+        <li>Carwyn's Surfhouse</li>
+        <li>The Underdogbar</li>
+        <li>Rebel Meat</li>
+      </ul>
+    </section>
+
+    <!-- Contact -->
+    <section aria-labelledby="contact-heading">
+      <h2 id="contact-heading" class="tag mb-5 opacity-40">Kontakt</h2>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a
+          href="mailto:verena.hobl@gmail.com"
+          class="underline underline-offset-4 hover:opacity-60 transition-opacity duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-base-content"
+        >
+          Anfrage stellen
+        </a>
+        <span class="hidden sm:inline opacity-30">·</span>
+        <a
+          href="https://www.instagram.com/verenahobl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="underline underline-offset-4 hover:opacity-60 transition-opacity duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-base-content"
+        >
+          @verenahobl
+        </a>
+      </div>
+    </section>
+
+  </div>
+</Base>

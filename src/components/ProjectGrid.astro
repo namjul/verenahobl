@@ -1,0 +1,37 @@
+---
+import ProjectCard from './ProjectCard.astro';
+import CategoryFilter from './CategoryFilter.astro';
+
+interface Project {
+  slug: string;
+  data: {
+    title: string;
+    category: string;
+    images: string[];
+  };
+}
+
+interface Props {
+  projects: Project[];
+}
+
+const { projects } = Astro.props;
+
+// Unique categories in grid order
+const categories = [...new Set(projects.map((p) => p.data.category))];
+---
+
+<section class="max-w-6xl mx-auto px-6 py-12">
+  <CategoryFilter categories={categories} />
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {projects.map((project) => (
+      <ProjectCard
+        slug={project.slug}
+        title={project.data.title}
+        category={project.data.category}
+        thumbnail={project.data.images[0]}
+      />
+    ))}
+  </div>
+</section>

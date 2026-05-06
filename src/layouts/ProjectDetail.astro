@@ -1,0 +1,110 @@
+---
+import Base from './Base.astro';
+import ImageGallery from '../components/ImageGallery.astro';
+import PrevNext from '../components/PrevNext.astro';
+import ProcessSection from '../components/ProcessSection.astro';
+
+interface Credit {
+  label: string;
+  url: string;
+}
+
+interface Props {
+  title: string;
+  year: string;
+  category: string;
+  location?: string;
+  description: string;
+  images: string[];
+  credits?: Credit[];
+  process?: string;
+  prev?: string;
+  next?: string;
+  prevTitle?: string;
+  nextTitle?: string;
+}
+
+const {
+  title,
+  year,
+  category,
+  location,
+  description,
+  images,
+  credits = [],
+  process,
+  prev,
+  next,
+  prevTitle,
+  nextTitle,
+} = Astro.props;
+
+const categoryLabels: Record<string, string> = {
+  wandmalerei: 'Wandmalerei',
+  illustration: 'Illustration',
+  kalligrafie: 'Kalligrafie',
+  hochzeit: 'Hochzeitsdesign',
+  logo: 'Logo Design',
+  skulpturen: 'Skulpturen',
+  leinwand: 'Leinwand Malerei',
+};
+---
+
+<Base title={`${title} – Verena Hobl Design`} description={description}>
+  <article class="max-w-3xl mx-auto px-6 py-16">
+
+    <!-- Title -->
+    <h1 class="mb-3">{title}</h1>
+
+    <!-- Metadata row -->
+    <div class="flex items-center gap-4 mb-8 text-sm opacity-60">
+      <span>{year}</span>
+      {location && <span>·</span>}
+      {location && <span>{location}</span>}
+      <span>·</span>
+      <span class="tag">{categoryLabels[category] ?? category}</span>
+    </div>
+
+    <!-- Description -->
+    <p class="mb-12 max-w-prose">{description}</p>
+
+    <!-- Image gallery -->
+    {images.length > 0 && (
+      <ImageGallery images={images} title={title} />
+    )}
+
+    {images.length === 0 && (
+      <div class="w-full aspect-video bg-base-200 flex items-center justify-center mb-12 text-sm opacity-40">
+        Bilder folgen
+      </div>
+    )}
+
+    <!-- Credits -->
+    {credits.length > 0 && (
+      <div class="mt-10 pt-8 border-t border-base-300">
+        <p class="tag mb-3 opacity-50">Credits</p>
+        <ul class="space-y-1">
+          {credits.map((credit) => (
+            <li>
+              <a
+                href={credit.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="underline underline-offset-4 hover:opacity-60 transition-opacity duration-200"
+              >
+                {credit.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+
+    <!-- Process section (Entstehung) -->
+    <ProcessSection process={process} />
+
+    <!-- Prev / Next -->
+    <PrevNext prev={prev} next={next} prevTitle={prevTitle} nextTitle={nextTitle} />
+
+  </article>
+</Base>

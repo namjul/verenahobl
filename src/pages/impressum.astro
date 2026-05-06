@@ -1,0 +1,40 @@
+---
+export const prerender = true;
+
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Impressum – Verena Hobl Design"
+  description="Impressum und Datenschutzerklärung"
+>
+  <div class="max-w-2xl mx-auto px-6 py-16">
+    <h1 class="mb-10">Impressum</h1>
+
+    <!-- PLACEHOLDER — replace with real content before launch -->
+    <div class="space-y-8 opacity-60 text-sm">
+      <section>
+        <h2 class="tag mb-3">Angaben gemäß § 5 ECG</h2>
+        <p>
+          Verena Hobl<br />
+          [Adresse]<br />
+          [PLZ] Wien, Österreich
+        </p>
+      </section>
+
+      <section>
+        <h2 class="tag mb-3">Kontakt</h2>
+        <p>
+          E-Mail: <a href="mailto:verena.hobl@gmail.com" class="underline underline-offset-4">verena.hobl@gmail.com</a>
+        </p>
+      </section>
+
+      <section>
+        <h2 class="tag mb-3">Datenschutz</h2>
+        <p>
+          [Datenschutzerklärung folgt — Inhalt von Verena vor Launch einfügen]
+        </p>
+      </section>
+    </div>
+  </div>
+</Base>

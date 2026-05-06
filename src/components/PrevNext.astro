@@ -1,0 +1,45 @@
+---
+interface Props {
+  prev?: string;
+  next?: string;
+  prevTitle?: string;
+  nextTitle?: string;
+}
+
+const { prev, next, prevTitle, nextTitle } = Astro.props;
+---
+
+{(prev || next) && (
+  <nav
+    aria-label="Projekt-Navigation"
+    class="mt-20 pt-8 border-t border-base-300 flex justify-between items-start gap-8"
+  >
+    <div class="flex-1">
+      {prev && (
+        <a
+          href={`/projekte/${prev}`}
+          class="group flex flex-col gap-1 hover:opacity-60 transition-opacity duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-base-content"
+        >
+          <span class="tag opacity-40">← Zurück</span>
+          {prevTitle && (
+            <span class="text-sm">{prevTitle}</span>
+          )}
+        </a>
+      )}
+    </div>
+
+    <div class="flex-1 text-right">
+      {next && (
+        <a
+          href={`/projekte/${next}`}
+          class="group inline-flex flex-col gap-1 items-end hover:opacity-60 transition-opacity duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-base-content"
+        >
+          <span class="tag opacity-40">Weiter →</span>
+          {nextTitle && (
+            <span class="text-sm">{nextTitle}</span>
+          )}
+        </a>
+      )}
+    </div>
+  </nav>
+)}

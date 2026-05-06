@@ -1,0 +1,68 @@
+---
+interface Props {
+  categories: string[];
+}
+
+const { categories } = Astro.props;
+
+const labels: Record<string, string> = {
+  wandmalerei: 'Wandmalerei',
+  illustration: 'Illustration',
+  kalligrafie: 'Kalligrafie',
+  hochzeit: 'Hochzeit',
+  logo: 'Logo',
+  skulpturen: 'Skulpturen',
+  leinwand: 'Leinwand',
+};
+---
+
+<nav aria-label="Kategorie-Filter" class="mb-10">
+  <ul class="flex flex-wrap items-center gap-x-6 gap-y-2">
+    <li>
+      <button
+        data-filter="alle"
+        class="filter-btn tag cursor-pointer transition-opacity duration-200 hover:opacity-60 underline underline-offset-4"
+        aria-pressed="true"
+      >
+        Alle
+      </button>
+    </li>
+    {categories.map((cat) => (
+      <li>
+        <button
+          data-filter={cat}
+          class="filter-btn tag cursor-pointer transition-opacity duration-200 hover:opacity-60 opacity-50"
+          aria-pressed="false"
+        >
+          {labels[cat] ?? cat}
+        </button>
+      </li>
+    ))}
+  </ul>
+</nav>
+
+<script>
+  const buttons = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
+  const cards = document.querySelectorAll<HTMLElement>('[data-category]');
+
+  function setFilter(active: string) {
+    buttons.forEach((btn) => {
+      const isActive = btn.dataset.filter === active;
+      btn.setAttribute('aria-pressed', String(isActive));
+      btn.classList.toggle('underline', isActive);
+      btn.classList.toggle('underline-offset-4', isActive);
+      btn.classList.toggle('opacity-50', !isActive);
+    });
+
+    cards.forEach((card) => {
+      const show = active === 'alle' || card.dataset.category === active;
+      card.style.display = show ? '' : 'none';
+    });
+  }
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      setFilter(btn.dataset.filter ?? 'alle');
+    });
+  });
+</script>

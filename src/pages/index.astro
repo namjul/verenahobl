@@ -1,0 +1,13 @@
+---
+export const prerender = true;
+
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import ProjectGrid from '../components/ProjectGrid.astro';
+
+const projects = await getCollection('projekte');
+---
+
+<Base>
+  <ProjectGrid projects={projects} />
+</Base>
