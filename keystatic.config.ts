@@ -2,10 +2,8 @@ import { config, collection, fields } from '@keystatic/core';
 
 export default config({
   storage: {
-    kind: 'local',
-    // TODO before Vercel deploy: switch to github storage
-    // kind: 'github',
-    // repo: { owner: 'YOUR_GITHUB_USERNAME', name: 'website-verena' },
+    kind: 'github',
+    repo: { owner: 'namjul', name: 'verenahobl' },
   },
   ui: {
     brand: { name: 'Verena Hobl – Design' },
