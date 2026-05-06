@@ -71,7 +71,70 @@ Present on all pages. Contains:
 
 ---
 
-## 3. Site Structure
+## 3. Brand Voice & Visual Identity
+
+### 3.1 Core Philosophy
+
+The brand is defined by a single principle that runs through both the copy and the visual design:
+
+> **"Mit wenigen Linien das Wesentliche einzufangen"** — capturing the essential with few lines.
+
+This is not just a personal quote; it describes the site itself. The fewest possible UI elements, the fewest possible words, maximum image surface area.
+
+### 3.2 Brand Voice
+
+**Register:** Warm, direct, understated. First-person implied but rarely stated. Zero marketing language.
+
+**Patterns in the copy:**
+- Descriptions are 1–3 sentences maximum. Never padded.
+- Facts come first: what, where, year. Emotion is implicit in the work, not the text.
+- German, no anglicisms except for proper names (Selfie-Spots, Walter White, The Underdogbar).
+- No calls-to-action, no "contact me", no "book now" — the contact info is just there.
+- The bio doesn't list achievements; it states a preference ("bin ich in meinem Element").
+
+**What to avoid in new copy:**
+- Adjectives stacked on adjectives ("innovative, creative, unique")
+- English marketing phrases
+- Explaining the work in words that the images already say
+
+### 3.3 Visual Identity
+
+**Reduction as identity:** The minimal white/black UI is not a neutral backdrop — it is the brand statement. The contrast between the controlled, sparse interface and the expressive, colourful artwork is intentional and deliberate.
+
+**The bottle motif:** The animated bottle illustration (`flasche.png`) appears in two places: the site footer (every page) and as a Playground project asset. It is the only decorative/playful element in the UI itself — a small signature that breaks the strict minimalism in a personal, handmade way. Treat it as a mascot/logo secondary element, not random decoration.
+
+**Image as primary content:** The grid IS the homepage. There are no headlines, hero banners, or introductory text on the homepage — the visitor lands directly in the work.
+
+**Typography hierarchy (inferred, exact font unknown):**
+- Single typeface throughout (no Typekit/Adobe Fonts confirmed; likely a system or Google Font)
+- Three visible weights/treatments:
+  1. Navigation links — light/regular
+  2. Project titles in grid and on detail pages — likely medium or regular
+  3. Category tags — uppercase, letter-spaced (the only decorative typographic element)
+- No decorative or display typefaces anywhere
+
+**Color philosophy:**
+- UI palette: `#ffffff` background, near-black text — never softened to grey
+- The only "brand colors" are those that appear in the work itself (murals, illustrations)
+- No hover color shifts on nav — the aesthetic is static, not interactive-flashy
+
+**Squarespace template:** `portfolio-grid-basic` — this is the exact template. A rebuild should match this grid structure: image-first cards, title below, no metadata in the grid.
+
+### 3.4 Identity Summary for Rebuilding
+
+| Dimension | Decision |
+|---|---|
+| Voice | Sparse German; facts, no fluff |
+| Color | White + black only (UI); all color from artwork |
+| Layout | Work-first; zero decorative chrome |
+| Typography | One font, three treatments; uppercase tags only |
+| Personality | Handmade precision — art quality in a grid |
+| Signature element | Animated bottle in footer |
+| What the site doesn't do | Filter, search, animate, upsell, explain |
+
+---
+
+## 4. Site Structure
 
 ```
 /                          → Projekte (homepage = project grid)
@@ -81,7 +144,7 @@ Present on all pages. Contains:
 /impressum                 → legal notice + privacy policy (linked in footer)
 ```
 
-### 3.1 Primary Navigation
+### 4.1 Primary Navigation
 
 | Label | URL | Notes |
 |---|---|---|
@@ -90,7 +153,7 @@ Present on all pages. Contains:
 
 ---
 
-## 4. Page: Projekte (Homepage / Project Grid)
+## 5. Page: Projekte (Homepage / Project Grid)
 
 **URL:** `/` and `/projekte`
 
@@ -125,7 +188,7 @@ Present on all pages. Contains:
 
 ---
 
-## 5. Page: Profil
+## 6. Page: Profil
 
 **URL:** `/profil`
 
@@ -164,7 +227,7 @@ Verena Hobl is a Vienna-based graphic designer and illustrator working in both r
 
 ---
 
-## 6. Project Detail Page Template
+## 7. Project Detail Page Template
 
 All 19 projects share this template:
 
@@ -181,9 +244,9 @@ All 19 projects share this template:
 
 ---
 
-## 7. All Projects — Full Content
+## 8. All Projects — Full Content
 
-### 7.1 Strandbar Herrmann Jubiläum
+### 8.1 Strandbar Herrmann Jubiläum
 - **Slug:** `/projekte/strandbar-herrmann-jubilaeum`
 - **Year:** 2025
 - **Category:** WANDMALEREI
@@ -196,7 +259,7 @@ All 19 projects share this template:
 
 ---
 
-### 7.2 Goldschmiedatelier
+### 8.2 Goldschmiedatelier
 - **Slug:** `/projekte/goldschmiedatelier`
 - **Year:** 2024
 - **Category:** WANDMALEREI
@@ -211,7 +274,7 @@ All 19 projects share this template:
 
 ---
 
-### 7.3 Gurkerl
+### 8.3 Gurkerl
 - **Slug:** `/projekte/gurkerl`
 - **Year:** 2021
 - **Category:** WANDMALEREI
@@ -224,7 +287,7 @@ All 19 projects share this template:
 
 ---
 
-### 7.4 Gesichter in Linien
+### 8.4 Gesichter in Linien
 - **Slug:** `/projekte/gesichter-in-linien`
 - **Year:** Since 2020
 - **Category:** ILLUSTRATION
@@ -244,7 +307,7 @@ All 19 projects share this template:
 
 ---
 
-### 7.5 Three Legends
+### 8.5 Three Legends
 - **Slug:** `/projekte/three-legends`
 - **Year:** 2022
 - **Category:** WANDMALEREI
@@ -257,7 +320,7 @@ All 19 projects share this template:
 
 ---
 
-### 7.6 Scheune
+### 8.6 Scheune
 - **Slug:** `/projekte/scheune`
 - **Year:** 2019
 - **Category:** WANDMALEREI
@@ -270,7 +333,7 @@ All 19 projects share this template:
 
 ---
 
-### 7.7 Graffiti Porträt
+### 8.7 Graffiti Porträt
 - **Slug:** `/projekte/graffiti-portrait`
 - **Year:** 2021
 - **Category:** WANDMALEREI
@@ -283,7 +346,7 @@ All 19 projects share this template:
 
 ---
 
-### 7.8 The Underdogbar
+### 8.8 The Underdogbar
 - **Slug:** `/projekte/the-underdogbar`
 - **Year:** 2018
 - **Category:** LOGO DESIGN UND ANIMATION
@@ -296,7 +359,7 @@ All 19 projects share this template:
 
 ---
 
-### 7.9 Strandbar Herrmann
+### 8.9 Strandbar Herrmann
 - **Slug:** `/projekte/strandbar-herrmann`
 - **Year:** 2021
 - **Category:** WANDMALEREI
@@ -309,7 +372,7 @@ All 19 projects share this template:
 
 ---
 
-### 7.10 Graffiti Dschungel
+### 8.10 Graffiti Dschungel
 - **Slug:** `/projekte/graffiti-dschungel`
 - **Year:** 2020
 - **Category:** WANDMALEREI
@@ -322,7 +385,7 @@ All 19 projects share this template:
 
 ---
 
-### 7.11 Kalligrafie (Hochzeitseinladung)
+### 8.11 Kalligrafie (Hochzeitseinladung)
 - **Slug:** `/projekte/kalligrafie`
 - **Year:** Since 2016
 - **Category:** KALLIGRAFIE
@@ -334,7 +397,7 @@ All 19 projects share this template:
 
 ---
 
-### 7.12 Familien Porträts
+### 8.12 Familien Porträts
 - **Slug:** `/projekte/familien-portraits`
 - **Year:** Since 2020
 - **Category:** ILLUSTRATION
@@ -346,7 +409,7 @@ All 19 projects share this template:
 
 ---
 
-### 7.13 Walter White
+### 8.13 Walter White
 - **Slug:** `/projekte/walter-white`
 - **Year:** 2018
 - **Category:** WANDMALEREI
@@ -359,7 +422,7 @@ All 19 projects share this template:
 
 ---
 
-### 7.14 Alpines Hochzeitsdesign
+### 8.14 Alpines Hochzeitsdesign
 - **Slug:** `/projekte/alpines-hochzeitsdesign`
 - **Year:** 2019
 - **Category:** HOCHZEITSDESIGN
@@ -373,7 +436,7 @@ All 19 projects share this template:
 
 ---
 
-### 7.15 Playground
+### 8.15 Playground
 - **Slug:** `/projekte/playground`
 - **Year:** 2020
 - **Category:** ILLUSTRATION UND GIFS
@@ -389,7 +452,7 @@ All 19 projects share this template:
 
 ---
 
-### 7.16 Pärchen Illustration
+### 8.16 Pärchen Illustration
 - **Slug:** `/projekte/paerchen-illustration`
 - **Year:** 2019
 - **Category:** HOCHZEITSEINLADUNG
@@ -401,7 +464,7 @@ All 19 projects share this template:
 
 ---
 
-### 7.17 Cartoon
+### 8.17 Cartoon
 - **Slug:** `/projekte/cartoon`
 - **Year:** 2008
 - **Category:** ILLUSTRATION
@@ -419,7 +482,7 @@ All 19 projects share this template:
 
 ---
 
-### 7.18 Miniatur-Schädel
+### 8.18 Miniatur-Schädel
 - **Slug:** `/projekte/miniatur-schaedel`
 - **Year:** 2013
 - **Category:** SKULPTUREN
@@ -431,7 +494,7 @@ All 19 projects share this template:
 
 ---
 
-### 7.19 Schwarz-weiß Porträt
+### 8.19 Schwarz-weiß Porträt
 - **Slug:** `/projekte/schwarz-wei-portrt`
 - **Year:** 2015
 - **Category:** LEINWAND MALEREI
@@ -443,7 +506,7 @@ All 19 projects share this template:
 
 ---
 
-## 8. Project Category Reference
+## 9. Project Category Reference
 
 | Category Label (as displayed) | Type |
 |---|---|
@@ -459,7 +522,7 @@ All 19 projects share this template:
 
 ---
 
-## 9. Asset Notes
+## 10. Asset Notes
 
 - **Footer bottle:** Animated GIF, filename `flasche2.png` (appears in footer on all pages and also in the Playground project gallery)
 - **Logo:** Linked image at 1500w — not text-based
@@ -469,7 +532,7 @@ All 19 projects share this template:
 
 ---
 
-## 10. External Links Referenced on Site
+## 11. External Links Referenced on Site
 
 | Context | Link |
 |---|---|
@@ -482,7 +545,7 @@ All 19 projects share this template:
 
 ---
 
-## 11. Localization
+## 12. Localization
 
 - Site language: German (Austrian)
 - UI strings:
