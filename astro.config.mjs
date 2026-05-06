@@ -5,6 +5,7 @@ import keystatic from '@keystatic/astro';
 import vercel from '@astrojs/vercel';
 
 export default defineConfig({
+  site: 'https://verenahobl.vercel.app',
   output: 'static',
   adapter: vercel(),
   integrations: [react(), keystatic()],
