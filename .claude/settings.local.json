@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:verenahobl.at)",
+      "WebFetch(domain:static1.squarespace.com)"
+    ]
+  }
+}
