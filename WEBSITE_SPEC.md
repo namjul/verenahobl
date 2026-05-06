@@ -31,7 +31,7 @@ The site is intentionally minimal — color comes entirely from project photogra
 ### 2.2 Typography
 
 - Logo/wordmark: **hand-lettered calligraphy** — lowercase "verena hobl" in a single-weight ink line, loose and organic. Not a typeface. Cannot be replicated with a font; must use the image file (`verenahobl_logo.webp`). This is the primary brand differentiator.
-- Site body/nav font: clean, minimal sans-serif — `⚠ UNKNOWN` (identify via WhatFont or ask Verena)
+- Site body/nav font: **Brevia**
 - Navigation: standard weight, no uppercase
 - Body text: regular weight, black on white
 - Category tags on project pages: uppercase, letter-spaced (e.g. `WANDMALEREI`, `ILLUSTRATION`) — only typographic decoration on the site
@@ -107,7 +107,7 @@ This is not just a personal quote; it describes the site itself. The fewest poss
 **Image as primary content:** The grid IS the homepage. There are no headlines, hero banners, or introductory text on the homepage — the visitor lands directly in the work.
 
 **Typography hierarchy (inferred, exact font unknown):**
-- Single typeface throughout (`⚠ UNKNOWN` — identify before build)
+- Single typeface throughout: **Brevia**
 - Three visible weights/treatments:
   1. Navigation links — light/regular
   2. Project titles in grid and on detail pages — likely medium or regular
